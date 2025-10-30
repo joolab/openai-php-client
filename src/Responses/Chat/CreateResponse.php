@@ -36,6 +36,7 @@ final class CreateResponse implements ResponseContract, ResponseHasMetaInformati
         public readonly array $choices,
         public readonly ?CreateResponseUsage $usage,
         private readonly MetaInformation $meta,
+        public readonly array $attributes,
     ) {}
 
     /**
@@ -58,6 +59,7 @@ final class CreateResponse implements ResponseContract, ResponseHasMetaInformati
             $choices,
             isset($attributes['usage']) ? CreateResponseUsage::from($attributes['usage']) : null,
             $meta,
+            $attributes,
         );
     }
 
